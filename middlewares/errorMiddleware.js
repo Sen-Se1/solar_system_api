@@ -22,7 +22,7 @@ const handleJwtExpired = () =>
 
 const globalError = (err, req, res, next) => {
   err.statusCode = err.statusCode || 500;
-  err.status = err.status || "Erreur";
+  err.status = err.status || "Error";
   if (err.code === 11000) {
     const firstKey = Object.keys(err.keyValue)[0];
     err.message = `Ce ${firstKey} : '${err.keyValue[firstKey]}' existe déjà`;
